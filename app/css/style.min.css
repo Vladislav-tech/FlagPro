@@ -190,7 +190,7 @@ h6 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #e2e2e2;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
@@ -361,11 +361,11 @@ body {
   width: 70%
 }
 .header .nav-list__link {
-  color: #e2e2e2;
+  color: #fff;
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: 700;
-  font-size: 14px
+  font-size: 16px
 }
 .header .burger {
   display: none
@@ -385,17 +385,8 @@ body {
     right: 0;
     height: 92vh;
     top: 79px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
     width: 50%;
+    display: block;
     background-color: #22aaa1;
     border-left: 1px solid #004642;
     -webkit-transform: translateX(100%);
@@ -408,7 +399,26 @@ body {
     transition: transform .5s ease-in,-webkit-transform .5s ease-in
   }
   .header .nav-list__item {
+    height: 20%;
     opacity: 0
+  }
+  .header .nav-list__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s
+  }
+  .header .nav-list__link:hover {
+    background-color: #009688
   }
   .header .burger {
     display: block;
@@ -501,6 +511,31 @@ body {
   height: 215px;
   background-color: #f1f1f1;
   border-radius: 8px
+}
+.popular-flags__item-img {
+  width: 307px;
+  height: 162px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+.popular-flags__item-img_USA {
+  background-image: url(../img/dist/flags/USA.svg)
+}
+.popular-flags__item-img_UK {
+  background-image: url(../img/dist/flags/UK.svg)
+}
+.popular-flags__item-img_Canada {
+  background-image: url(../img/dist/flags/Canada.svg)
+}
+.popular-flags__item-img_France {
+  background-image: url(../img/dist/flags/France.svg)
+}
+.popular-flags__item-img_Russia {
+  background-image: url(../img/dist/flags/Russia.svg)
+}
+.popular-flags__item-img_Germany {
+  background-image: url(../img/dist/flags/Germany.svg)
 }
 .popular-flags__item-title {
   font-weight: 500;
@@ -638,12 +673,29 @@ body {
   justify-content: flex-end;
   font-size: 22px
 }
+@media screen and (max-width:768px) {
+  .about__title,
+  .popular-flags__title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 42px
+  }
+  .about__description,
+  .intro__description {
+    font-size: 24px;
+    line-height: 145%;
+    margin-top: 53px
+  }
+}
 @media screen and (max-width:620px) {
+  .container {
+    width: 96%
+  }
   .footer__container {
     -ms-grid-columns: 1fr!important;
     grid-template-columns: 1fr!important;
-    -ms-grid-rows: 115px 75px 1fr 1fr;
-    grid-template-rows: 115px 75px 1fr 1fr
+    -ms-grid-rows: 115px 75px 1fr 75px;
+    grid-template-rows: 115px 75px 1fr 75px
   }
   .footer .social-media {
     -webkit-box-pack: start;
@@ -662,6 +714,18 @@ body {
   }
 }
 @media screen and (max-width:411px) {
+  .about__title,
+  .popular-flags__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px
+  }
+  .about__description,
+  .intro__description {
+    font-size: 20px;
+    line-height: 145%;
+    margin-top: 53px
+  }
   .footer .social-media {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -676,5 +740,13 @@ body {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start
+  }
+}
+@media screen and (max-width:380px) {
+  .header .nav-list {
+    width: 60%
+  }
+  .header .nav__list-link {
+    font-size: 14px
   }
 }

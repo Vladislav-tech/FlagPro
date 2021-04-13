@@ -15,6 +15,7 @@ function browsersync() {
   browserSync.init({
     server: { baseDir: 'app/'},
     online: true,
+    notify: false,
   });
 }
 
@@ -23,7 +24,7 @@ function styles() {
   .pipe(concat('style.min.css'))
   .pipe(sass())
   .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-  .pipe(cleancss( { level: { 1: { specialComments: 0 } }} ))
+  .pipe(cleancss( { level: { 1: { specialComments: 0 } }, format: 'beautify'} ))
   .pipe(dest('app/css/'))
   .pipe(browserSync.stream());
 }

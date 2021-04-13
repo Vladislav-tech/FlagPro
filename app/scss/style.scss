@@ -18,7 +18,7 @@
 %logo {
   display: flex;
   align-items: center;
-  color: rgb(226, 226, 226);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
@@ -171,11 +171,11 @@ body {
   width: 70%;
 
   &__link {
-    color: rgb(226, 226, 226);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
   }
 
 }
@@ -200,10 +200,8 @@ body {
         right: 0px;
         height: 92vh;
         top: 79px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         width: 50%;
+        display: block;
         background-color: $darkBackground;
         border-left: 1px solid #004642;
         transform: translateX(100%);
@@ -211,7 +209,20 @@ body {
     }
     
     .nav-list__item {
-        opacity: 0;
+      height: 20%;
+      opacity: 0;
+    }
+
+    .nav-list__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      transition: .4s;
+    }
+
+    .nav-list__link:hover {
+      background-color: $headerLinkHover
     }
     
     .burger {
@@ -301,6 +312,39 @@ body {
     height: 215px;
     background-color: #F1F1F1;
     border-radius: 8px;
+
+    &-img {
+      width: 307px;
+      height: 162px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
+    /* remake to nth-child(?)*/
+    &-img_USA {
+      background-image: url('../img/dist/flags/USA.svg');
+    }
+
+    &-img_UK {
+      background-image: url('../img/dist/flags/UK.svg');
+    }
+
+    &-img_Canada {
+      background-image: url('../img/dist/flags/Canada.svg');
+    }
+
+    &-img_France {
+      background-image: url('../img/dist/flags/France.svg');
+    }
+
+    &-img_Russia {
+      background-image: url('../img/dist/flags/Russia.svg');
+    }
+
+    &-img_Germany {
+      background-image: url('../img/dist/flags/Germany.svg');
+    }
 
   }
 
@@ -441,12 +485,30 @@ body {
 
 }
 
+@media screen and(max-width: 768px) {
+  %h2 {
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  %description {
+    font-size: 24px;
+    line-height: 145%;
+    margin-top: 53px
+  }
+}
+
 @media screen and(max-width: 620px) {
+
+  .container {
+    width: 96%;
+  }
 
   .footer {
     &__container {
       grid-template-columns: 1fr !important;
-      grid-template-rows: 115px 75px 1fr 1fr;
+      grid-template-rows: 115px 75px 1fr 75px
     }
 
     .social-media {
@@ -465,6 +527,18 @@ body {
 }
 
 @media screen and(max-width: 411px) {
+  %h2 {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+  }
+
+
+  %description {
+    font-size: 20px;
+    line-height: 145%;
+    margin-top: 53px
+  }
 
   .footer {
     .social-media {
@@ -480,4 +554,18 @@ body {
 
   }
 
+}
+
+@media screen and(max-width: 380px) {
+
+  .header {
+    .nav-list {
+    width: 60%;
+    }
+
+    .nav__list-link {
+      font-size: 14px;
+    }
+  }
+  
 }
