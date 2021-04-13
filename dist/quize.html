@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlagPro</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="shortcut icon" href="img/dist/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Сайт, посвящённый флагам и странам мира"/>
+    <meta name="keywords" content="Флаги, страны, мир, Земля, викторина, сайт, факты"/>
+    <script src="https://kit.fontawesome.com/146c272e54.js" crossorigin="anonymous"></script>
+  </head>
+<body class="quize-page "id="quize-page">
+    <header class="header">
+        <div class="header__container container">
+          <nav class="header__nav nav">
+            <a href="index.html" title="Главная страница" class="logo-link">
+              <div class="nav__logo">
+                <img src="img/dist/icons/nav-logo.svg" alt="логотип" width="88" height="80"/>
+                <span class="nav__logo-title">FlagPro</span>
+            </div>
+            </a>
+            <ul class="nav-list">
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Домой</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="quize.html">Викторина</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">Случайный факт</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#about">О проекте</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        </div>
+      </header>
+
+      <div class="quize-page__wrapper">
+        <section class="quize">
+          <div class="quize__container container">
+            <div class="quize__flag">
+              <div class="quize__flag-img"></div>
+              <h4 class="quize__flag-title">Флаг какой страны изображён?</h4>
+            </div>
+  
+            <ul class="answers-list">
+              <img class="answers-list__tip" src="img/dist/icons/lightbulb.svg" alt="подсказка" width="41" height="41">
+              <li class="answers-list__item" data-right="false">Название страны</li>
+              <li class="answers-list__item" data-right="false">Название страны</li>
+              <li class="answers-list__item" data-right="false">Название страны</li>
+              <li class="answers-list__item" data-right="false">Название страны</li>
+              <img class="answers-list__arrow-next" src="img/dist/icons/Arrow-next.svg" alt="следующий вопрос" width="105" height="82">
+            </ul>
+  
+            <div class="quize__next-question"></div>
+          </div>
+  
+        </section>
+  
+        <section class="quize-info">
+          <div class="quize-info__container container">
+            <div class="quize-info__lifes">
+              <svg width="47" height="49" viewBox="0 0 47 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)">
+                <path d="M40.2361 6.2703C38.3933 4.08979 35.8472 3 32.5969 3C31.6974 3 30.7794 3.18899 29.8438 3.56679C28.9078 3.94486 28.037 4.45493 27.2325 5.09664C26.427 5.73815 25.7347 6.3406 25.1539 6.90304C24.5738 7.46567 24.0223 8.06359 23.5 8.69633C22.9776 8.06359 22.4262 7.46567 21.846 6.90304C21.2655 6.3406 20.5729 5.73852 19.7675 5.09664C18.9622 4.45466 18.0916 3.94495 17.1558 3.56679C16.2201 3.18908 15.3023 3 14.4028 3C11.1527 3 8.60652 4.09007 6.76394 6.2703C4.92136 8.45035 4 11.4742 4 15.3421C4 16.5202 4.17075 17.7335 4.51156 18.9814C4.85238 20.2297 5.24076 21.2935 5.67594 22.1724C6.11105 23.0512 6.60447 23.9086 7.15583 24.7438C7.70718 25.579 8.11012 26.1543 8.36373 26.471C8.61757 26.7871 8.81713 27.0159 8.96219 27.1563L22.5424 43.0327C22.8036 43.3494 23.1228 43.5078 23.5 43.5078C23.8771 43.5078 24.1965 43.3494 24.4576 43.0333L38.0162 27.2095C41.3388 23.1837 43 19.2277 43 15.3421C43.0001 11.4742 42.0786 8.45035 40.2361 6.2703Z" fill="#FF0000"/>
+                </g>
+                <defs>
+                <filter id="filter0_d" x="0" y="0" width="47" height="48.5078" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                <feOffset dy="1"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+                </defs>
+              </svg>
+
+              <svg width="47" height="49" viewBox="0 0 47 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)">
+                <path d="M40.2361 6.2703C38.3933 4.08979 35.8472 3 32.5969 3C31.6974 3 30.7794 3.18899 29.8438 3.56679C28.9078 3.94486 28.037 4.45493 27.2325 5.09664C26.427 5.73815 25.7347 6.3406 25.1539 6.90304C24.5738 7.46567 24.0223 8.06359 23.5 8.69633C22.9776 8.06359 22.4262 7.46567 21.846 6.90304C21.2655 6.3406 20.5729 5.73852 19.7675 5.09664C18.9622 4.45466 18.0916 3.94495 17.1558 3.56679C16.2201 3.18908 15.3023 3 14.4028 3C11.1527 3 8.60652 4.09007 6.76394 6.2703C4.92136 8.45035 4 11.4742 4 15.3421C4 16.5202 4.17075 17.7335 4.51156 18.9814C4.85238 20.2297 5.24076 21.2935 5.67594 22.1724C6.11105 23.0512 6.60447 23.9086 7.15583 24.7438C7.70718 25.579 8.11012 26.1543 8.36373 26.471C8.61757 26.7871 8.81713 27.0159 8.96219 27.1563L22.5424 43.0327C22.8036 43.3494 23.1228 43.5078 23.5 43.5078C23.8771 43.5078 24.1965 43.3494 24.4576 43.0333L38.0162 27.2095C41.3388 23.1837 43 19.2277 43 15.3421C43.0001 11.4742 42.0786 8.45035 40.2361 6.2703Z" fill="#FF0000"/>
+                </g>
+                <defs>
+                <filter id="filter0_d" x="0" y="0" width="47" height="48.5078" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                <feOffset dy="1"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+                </defs>
+              </svg>
+
+              <svg width="47" height="49" viewBox="0 0 47 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)">
+                <path d="M40.2361 6.2703C38.3933 4.08979 35.8472 3 32.5969 3C31.6974 3 30.7794 3.18899 29.8438 3.56679C28.9078 3.94486 28.037 4.45493 27.2325 5.09664C26.427 5.73815 25.7347 6.3406 25.1539 6.90304C24.5738 7.46567 24.0223 8.06359 23.5 8.69633C22.9776 8.06359 22.4262 7.46567 21.846 6.90304C21.2655 6.3406 20.5729 5.73852 19.7675 5.09664C18.9622 4.45466 18.0916 3.94495 17.1558 3.56679C16.2201 3.18908 15.3023 3 14.4028 3C11.1527 3 8.60652 4.09007 6.76394 6.2703C4.92136 8.45035 4 11.4742 4 15.3421C4 16.5202 4.17075 17.7335 4.51156 18.9814C4.85238 20.2297 5.24076 21.2935 5.67594 22.1724C6.11105 23.0512 6.60447 23.9086 7.15583 24.7438C7.70718 25.579 8.11012 26.1543 8.36373 26.471C8.61757 26.7871 8.81713 27.0159 8.96219 27.1563L22.5424 43.0327C22.8036 43.3494 23.1228 43.5078 23.5 43.5078C23.8771 43.5078 24.1965 43.3494 24.4576 43.0333L38.0162 27.2095C41.3388 23.1837 43 19.2277 43 15.3421C43.0001 11.4742 42.0786 8.45035 40.2361 6.2703Z" fill="#FF0000"/>
+                </g>
+                <defs>
+                <filter id="filter0_d" x="0" y="0" width="47" height="48.5078" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                <feOffset dy="1"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+                </defs>
+              </svg>
+                
+            </div>
+            <div class="quize-info__question">
+              <h3 class="quize-info__question-title">Вопрос</h3>
+              <div class="quize-info__question-progressbar progressbar">
+                <div class="progressbar__fill"></div>
+              </div>
+            </div>
+  
+            <div class="quize-info__time">
+              <div class="quize-info__time-text">Время</div>
+              <div class="quize-info__time-field"></div>
+            </div>
+  
+            <div class="quize-info__fact">
+              <div class="quize-info__fact-buble"></div>
+              <div class="quize-info__fact-text"></div>
+            </div>
+          </div>
+          
+        </section>
+  
+      </div>
+      <footer class="footer">
+        <div class="footer__container container">
+          <a href="index.html" title="Главная страница" class="logo-link">
+            <div class="footer__logo">
+              <img src="img/dist/icons/nav-logo.svg" alt="логотип" width="88" height="80"/>
+              <span class="footer__logo-title">FlagPro</span>
+            </div>
+          </a>
+  
+          <ul class="social-media" id="contacts">
+            <a href="https://vk.com/vladislav_tech" class="social-media__link" title="страница VK">
+              <div class="social-media__button">
+                <div class="social-media__icon">
+                  <i class="fab fa-vk"></i>
+                </div>
+                <span>Вконтакте</span>
+              </div>
+            </a>
+  
+            <a href="https://github.com/Vladislav-tech" class="social-media__link" title="профиль Github">
+              <div class="social-media__button">
+                <div class="social-media__icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <span>Github</span>
+              </div>
+            </a>
+  
+            <a href="https://t.me/vladislav_tech" class="social-media__link" title="написать в Telegram">
+              <div class="social-media__button">
+                <div class="social-media__icon">
+                  <i class="fab fa-telegram-plane"></i>
+                </div>
+                <span>Telegram</span>
+              </div>
+            </a>
+  
+            <a href="mailto:vladislav.frint@gmail.com?subject=FlagPro" class="social-media__link">
+              <div class="social-media__button">
+                <div class="social-media__icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <span>E-mail</span>
+              </div>
+            </a>
+  
+          </ul>
+  
+          <h6 class="footer__copyright"> © Copyright, 2021 </h6>
+          <div class="link-wrapper footer__developer">
+            <span class="inner-wrapper wrapper-15">
+                <a class="link hover-15" href="https://github.com/Vladislav-tech">Developer: Vladislav-tech</a>
+            </span>
+        </div>
+        </div>
+      </footer>
+</body>
+</html>

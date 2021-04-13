@@ -2,6 +2,7 @@
 @import "variables.scss";
 @import "ripple.scss";
 @import "underlineLinks.scss";
+@import "quize.scss";
 
 %h2 {
   font-weight: bold;
@@ -383,7 +384,7 @@ body {
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 
   .logo-link {

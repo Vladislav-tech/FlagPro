@@ -49,7 +49,7 @@ function images() {
 
 function startwatch() {
   watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
-  watch('app/**/*.scss', styles);
+  watch('app/scss/*.scss', styles);
   watch('app/**/*.html').on('change', browserSync.reload);
   watch('app/img/src/**/*', images);
 }
