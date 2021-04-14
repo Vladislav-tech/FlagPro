@@ -32,7 +32,8 @@ function styles() {
 function scripts() {
   return src([
     'app/js/script.js',
-    'app/js/ripple.js'
+    'app/js/ripple.js',
+    'app/js/quize.js',
   ])
   .pipe(concat('app.min.js'))
   .pipe(uglify())

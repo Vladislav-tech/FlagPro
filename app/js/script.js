@@ -20,6 +20,7 @@ function navSlide() {
     });
 
     nav.addEventListener('click', function(evt) {
+        
         function closeMenu() {
             
         nav.classList.toggle('nav-active');
@@ -36,7 +37,9 @@ function navSlide() {
         }
         if (evt.target.className === 'nav-list__link') {
             console.log('nice');
-            closeMenu();
+            setTimeout(() => {
+                closeMenu();
+            }, 500);
         } else {
             console.log('wrong click');
         }
