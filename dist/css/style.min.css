@@ -74,20 +74,9 @@ h6 {
   font-size: inherit;
   font-weight: inherit
 }
-.ripple-link {
+.ripple {
   position: relative;
-  display: inline-block;
-  padding: 12px 36px;
-  margin: 10px 0;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 18px;
-  letter-spacing: 2px;
-  border-radius: 40px;
-  overflow: hidden;
-  background: -webkit-gradient(linear,left top,right top,from(#0162c8),to(#55e7fc));
-  background: -o-linear-gradient(left,#0162c8,#55e7fc);
-  background: linear-gradient(90deg,#0162c8,#55e7fc)
+  overflow: hidden
 }
 .ripple-effect {
   position: absolute;
@@ -176,7 +165,10 @@ h6 {
 .quize-page__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
 }
 .start {
   width: 100vw;
@@ -196,17 +188,30 @@ h6 {
   height: 50px
 }
 .quize {
-  display: none;
+  display: none
+}
+.quize .container {
+  width: 100%
+}
+.quize__progressbar {
+  position: absolute;
+  top: 0;
+  padding: 2px;
+  width: 100%;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #000
+}
+.quize__progrssbar-fill {
   width: 50%;
-  margin-top: 130px
-}
-.quize__lifes {
-  display: none
-}
-.quize__time {
-  display: none
+  height: 100%;
+  border-radius: 12px;
+  background-color: #48e445
 }
 .quize__flag {
+  position: relative;
+  margin-top: 140px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,178 +225,85 @@ h6 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0 auto;
-  width: 379px;
-  height: 225px;
-  border-radius: 20px;
-  background-color: #fff
+  width: 642px;
+  height: 288px;
+  background-color: #fff;
+  border-radius: 12px
 }
 .quize__flag-img {
-  width: 307px;
-  height: 162px;
+  width: 402px;
+  height: 211px;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   background-image: url(../img/dist/flags/USA.svg);
   border-radius: 8px
 }
 .quize__flag-title {
-  margin-top: 11px;
-  font-size: 18px;
-  font-weight: 500
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px
 }
-.answers-list {
+.quize__time {
+  font-size: 24px;
+  line-height: 28px;
+  color: #fff
+}
+.quize__tip {
+  cursor: pointer
+}
+.quize__next-question {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  margin-left: auto;
+  cursor: pointer
+}
+.answers {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2,1fr);
-  -ms-grid-rows: (1fr)[4];
-  grid-template-rows: repeat(4,1fr);
-  gap: 30px 40px;
-  max-width: 500px;
-  margin: 0 auto
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 60px 1fr 1fr 1fr;
+  grid-template-rows: 60px 1fr 1fr 1fr;
+  gap: 20px
 }
-.answers-list__tip {
-  display: block;
-  margin-left: auto;
-  margin-top: auto;
-  grid-column: 2/-1;
-  cursor: pointer
-}
-.answers-list__arrow-next {
-  display: block;
-  margin-left: auto;
-  margin-top: auto;
-  grid-column: 2/-1;
-  cursor: pointer
-}
-.answers-list__item {
-  width: 230px;
-  height: 64px;
+.answers__item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #fff;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-weight: 700;
-  font-size: 22px;
-  line-height: 42px;
-  border-radius: 8px;
+  color: #fff;
+  font-size: 32px;
+  line-height: 37px;
+  width: 310px;
+  height: 74px;
   background-color: #ffb800;
-  -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.25);
-  box-shadow: 0 4px 4px rgba(0,0,0,.25);
-  cursor: pointer;
+  border-radius: 8px;
   -webkit-transition: .4s;
   -o-transition: .4s;
-  transition: .4s
+  transition: .4s;
+  cursor: pointer
 }
-.answers-list__item:hover {
-  background-color: #ff9400
+.answers__item:hover {
+  background-color: #f80
 }
-.quize-info {
-  display: none;
-  margin-top: 130px;
-  width: 50%
-}
-.quize-info__question-title {
-  margin-top: 30px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 42px
-}
-.quize-info__question-progressbar {
-  margin-top: 30px;
-  background-color: #fff;
-  height: 31px;
-  border-radius: 12px
-}
-.quize-info .progressbar__fill {
-  background-color: #15d60e;
-  width: 50%;
-  border-radius: 12px;
-  height: 100%
-}
-.quize-info__time {
-  margin-top: 46px;
-  line-height: 42px
-}
-.quize-info__time-text {
-  margin-bottom: 38px;
-  font-size: 36px
-}
-.quize-info__fact-buble {
-  background-image: url(../img/dist/icons/Buble.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 210px;
-  height: 126px
-}
-.quize-info__fact-text {
-  max-width: 246px;
-  color: #fff;
-  font-size: 14px;
-  line-height: 16px
-}
-@media screen and (max-width:1024px) {
-  .answers-list {
-    gap: 20px 20px
-  }
-  .quize-info__question-progressbar {
-    height: 28px
-  }
-}
-@media screen and (max-width:984px) {
-  .answers-list {
-    gap: 0 10px
-  }
-  .answers-list__tip {
-    margin-bottom: auto
-  }
-}
-@media screen and (max-width:964px) {
-  .quize {
-    width: 60%
-  }
-  .quize-info {
-    width: 40%
-  }
-  .quize-info__question-progressbar {
-    height: 24px
-  }
-}
-@media screen and (max-width:848px) {
-  .quize {
-    width: 100%
-  }
-  .quize__lifes {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-bottom: 5px
-  }
-  .quize__time {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    font-size: 22px;
-    line-height: 21px
-  }
-  .quize-info {
-    display: none!important
-  }
+.answers .asd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
 }
 .about__title,
 .popular-flags__title {

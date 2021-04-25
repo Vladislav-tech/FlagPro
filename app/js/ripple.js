@@ -1,7 +1,8 @@
-const buttons = document.querySelectorAll('.ripple-link');
+const buttonsRipple = document.querySelectorAll('.ripple');
+console.log(buttonsRipple);
 
-buttons.forEach(btn => {
-    btn.addEventListener('click', function(evt) {
+buttonsRipple.forEach(btnRipple => {
+    btnRipple.addEventListener('click', function(evt) {
         let x = evt.clientX - evt.target.offsetLeft;
         let y = evt.clientY - evt.target.offsetTop;
 
@@ -9,7 +10,7 @@ buttons.forEach(btn => {
         ripples.classList.add('ripple-effect');
         ripples.style.left = x + 'px';
         ripples.style.top = y + 'px';
-        btn.appendChild(ripples);
+        btnRipple.appendChild(ripples);
         
         setTimeout(() => {
             ripples.remove();

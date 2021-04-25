@@ -33,10 +33,11 @@ function scripts() {
   return src([
     'app/js/script.js',
     'app/js/ripple.js',
+    'app/js/contriesArray.js',
     'app/js/quize.js',
   ])
   .pipe(concat('app.min.js'))
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(dest('app/js'))
   .pipe(browserSync.stream());
 }
