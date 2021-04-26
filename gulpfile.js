@@ -34,6 +34,8 @@ function scripts() {
     'app/js/script.js',
     'app/js/ripple.js',
     'app/js/contriesArray.js',
+    'app/js/particles.min.js',
+    'app/js/gradientHover.js',
     'app/js/quize.js',
   ])
   .pipe(concat('app.min.js'))

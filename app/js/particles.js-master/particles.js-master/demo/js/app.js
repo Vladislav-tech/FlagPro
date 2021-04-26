@@ -1,55 +1,17 @@
-function navSlide() {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-list');
-    const navLinks = document.querySelectorAll('.nav-list__item');
-    
-    burger.addEventListener('click', () => {
-        //Toggle Nav
-        nav.classList.toggle('nav-active');
-        
-        //Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-            }
-        });
-        //Burger Animation
-        burger.classList.toggle('toggle');
-    });
+/* -----------------------------------------------
+/* How to use? : Check the GitHub README
+/* ----------------------------------------------- */
 
-    
-    function closeMenu() {
-            
-      nav.classList.toggle('nav-active');
-      
-      navLinks.forEach((link, index) => {
-          if (link.style.animation) {
-              link.style.animation = '';
-          } else {
-              link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-          }
-      });
+/* To load a config file (particles.json) you need to host this demo (MAMP/WAMP/local)... */
+/*
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particles.js loaded - callback');
+});
+*/
 
-      burger.classList.toggle('toggle');
-    }
-    
-    nav.addEventListener('click', function(evt) {
-        
-        if (evt.target.className === 'nav-list__link') {
-            setTimeout(() => {
-                closeMenu();
-            }, 500);
-        }
-    });
-    
-}
+/* Otherwise just put the config content (json): */
 
-navSlide();
-
-if (document.querySelector('#particles')) {
-  particlesJS('particles',
+particlesJS('particles-js',
   
   {
     "particles": {
@@ -169,4 +131,3 @@ if (document.querySelector('#particles')) {
   }
 
 );
-}

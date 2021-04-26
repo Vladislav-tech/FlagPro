@@ -52,5 +52,41 @@ const contries = [
     capital: 'Лондон',
     currency: 'Фунт стерлингов',
   },
+
+  {
+    flag: 'img/dist/flags/Ukraine.svg',
+    name: 'Украина',
+    facts: [],
+    population: 41723998,
+    capital: 'Киев',
+    currency: 'Гривна',
+  },
+
+  {
+    flag: 'img/dist/flags/Spain.svg',
+    name: 'Испания',
+    facts: [],
+    population:  47351567,
+    capital: 'Мадрид',
+    currency: 'Евро',
+  },
+
+  {
+    flag: 'img/dist/flags/China.svg',
+    name: 'Китай',
+    facts: [],
+    population:  1404328611,
+    capital: 'Пекин',
+    currency: 'Юань',
+  },
+
+  {
+    flag: 'img/dist/flags/India.svg',
+    name: 'Индия',
+    facts: [],
+    population:  1385179000,
+    capital: 'Нью-Дели',
+    currency: 'Индийская рупия',
+  },
 ];
 

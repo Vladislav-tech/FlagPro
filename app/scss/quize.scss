@@ -7,7 +7,7 @@
     }
 }
 
-.start {
+.start-page {
     width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -15,8 +15,21 @@
 	align-items: center;
 
     &__btn {
-        width: 136px;
-	    height: 50px;
+        position: absolute;
+        width: 200px;
+        height: 70px;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: #ec0303;
+        border-radius: 12px;
+        transition: .4s;
+    }
+
+    &__btn:hover {
+        box-shadow: 1px 1px 5px 1px #000;
+        text-shadow: 1px 1px black;
+        transform: scale(1.05);
     }
 }
 
@@ -39,7 +52,7 @@
     }
 
     &__progrssbar-fill {
-        width: 50%;
+        width: 0;
         height: 100%;
         border-radius: 12px;
         background-color: $quizeGreen;
@@ -54,7 +67,7 @@
         align-items: center;
         width: 642px;
         height: 288px;
-        background-color: $white;
+        background-color: transparentize($white, 0.1);
         border-radius: 12px;
     }
 
@@ -75,6 +88,20 @@
     }
 
     &__lifes {
+        display: flex;
+        align-items: center;
+        font-size: 40px;
+        color: red;
+        text-shadow: 0 0 1px black;
+    }
+
+    &__life {
+        margin-right: 12px;
+        transition: .4s;
+    }
+
+    &__life:hover {
+        color: #dd0000;
     }
 
     &__time {
@@ -88,18 +115,38 @@
 
     &__tip {
         cursor: pointer;
+        transition: .4s;
+    }
+
+    &__tip:hover {
+        transform: scale(0.92);
     }
 
     &__next-question {
+        display: none;
         grid-column: 2;
         margin-left: auto;
         cursor: pointer;
+        transition: .4s;
     }
+
+    &__finish-game {
+        display: none;
+        grid-column: 2;
+        margin-left: auto;
+        cursor: pointer;
+        transition: .4s;
+    }
+
+    // &__next-question:hover {
+    //     fill: rgb(88, 129, 175) !important;
+    //     transform: translate(1.5);
+    // }
 }
 .answers {
     display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 60px 1fr 1fr 1fr;
+	grid-template-rows: 60px 75px 75px 1fr;
 	gap: 20px;
 
     &__item {
@@ -121,6 +168,7 @@
 
     &__item:hover {
         background-color: $quizeOrangeHover;
+        box-shadow: 1px 1px rgba(0, 0, 0, 0.747)
     }
 
     .asd {
@@ -130,4 +178,137 @@
     }
 }
 .answers-items {
+}
+
+.stats {
+    display: none;
+    &__inner {
+        padding: 50px 0 0 0;
+        margin: 150px 0;
+        width: 650px;
+        height: 600px;
+        background-color: $white;
+        border-radius: 12px;
+    }
+
+    &__fires {
+        display: flex;
+        justify-content: space-around;
+        font-size: 55px;
+        color: red;
+    }
+
+    &__title {
+        margin-top: 38px;
+        font-size: 38px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &__table {
+        width: 100%;
+        margin-top: 50px;
+        font-size: 20px;
+        border: 1px solid black;
+        border-collapse: collapse;
+
+        td {
+            min-width: 50px;
+            padding: 5px;
+            border: 1px solid black;
+        }
+    }
+}
+
+
+@media screen and(max-width: 662px) {
+    .quize {
+        .container {
+            width: 99%;
+        }
+
+        &__flag {
+            width: 100%;
+            height: 268px;
+        }
+
+        &__flag-img {
+            width: 392px;
+            height: 201px;
+        }
+
+        &__time {
+            font-size: 22px;
+        }
+    }
+
+    .answers {
+        gap: 15px;
+        &__item {
+            width: 290px;
+            height: 65px;
+            font-size: 24px;
+        }
+    }
+}
+
+@media screen and(max-width: 595px) {
+    .quize {
+        .container {
+            width: 95vw;
+        }
+
+        &__flag-title {
+            font-size: 22px;
+        }
+    }
+
+    .answers {
+        &__item {
+            width: 100%;
+            font-size: 21px;
+        }
+    }
+}
+
+@media screen and(max-width: 450px) {
+    .quize {
+        &__flag-img {
+            width: 330px;
+            height: 175px;
+        }
+
+        &__next-question {
+            grid-column: 1;
+        }
+    }
+
+    .answers {
+        grid-template-rows: 60px repeat(5, 75px) 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .asd {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and(max-width: 360px) {
+    .quize {
+        &__flag-img {
+            width: 300px;
+            height: 158px;
+        }
+
+        &__flag-title {
+            font-size: 19px;
+        }
+    }
+}
+
+@media screen and(max-width: 320px) {
+    .quize__flag-img {
+        width: 290px;
+        height: 150px;
+    }
 }

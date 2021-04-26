@@ -1,5 +1,4 @@
 const buttonsRipple = document.querySelectorAll('.ripple');
-console.log(buttonsRipple);
 
 buttonsRipple.forEach(btnRipple => {
     btnRipple.addEventListener('click', function(evt) {
