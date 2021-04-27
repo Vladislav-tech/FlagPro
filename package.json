@@ -4,7 +4,7 @@
   "description": "The simple app to test your knowledge about flags.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "Flags",
@@ -16,6 +16,7 @@
   ],
   "author": "Vladislav Tseplyaev <vladislav.frint@gmail.com>",
   "license": "ISC",
+  "homepage": "https://vladislav-tech.github.io/FlagPro/",
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
@@ -27,5 +28,8 @@
     "gulp-newer": "^1.4.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^2.0.0"
+  },
+  "dependencies": {
+    "gulp-gh-pages": "^0.5.4"
   }
 }
