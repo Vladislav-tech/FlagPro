@@ -253,7 +253,7 @@ h6 {
   border: 1px solid #000
 }
 .quize__progrssbar-fill {
-  width: 50%;
+  width: 0;
   height: 100%;
   border-radius: 12px;
   background-color: #48e445
@@ -339,6 +339,16 @@ h6 {
   -o-transition: .4s;
   transition: .4s
 }
+.quize__finish-game {
+  display: none;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  margin-left: auto;
+  cursor: pointer;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s
+}
 .answers {
   display: -ms-grid;
   display: grid;
@@ -387,6 +397,116 @@ h6 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center
+}
+.stats {
+  display: none
+}
+.stats__inner {
+  padding: 50px 0 0 0;
+  margin: 150px 0;
+  width: 650px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 12px
+}
+.stats__fires {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  font-size: 55px;
+  color: red
+}
+.stats__title {
+  margin-top: 38px;
+  font-size: 38px;
+  font-weight: 600;
+  text-align: center
+}
+.stats__table {
+  width: 100%;
+  margin-top: 50px;
+  font-size: 20px;
+  border: 1px solid #000;
+  border-collapse: collapse
+}
+.stats__table td {
+  min-width: 50px;
+  padding: 5px;
+  border: 1px solid #000
+}
+@media screen and (max-width:662px) {
+  .quize .container {
+    width: 99%
+  }
+  .quize__flag {
+    width: 100%;
+    height: 268px
+  }
+  .quize__flag-img {
+    width: 392px;
+    height: 201px
+  }
+  .quize__time {
+    font-size: 22px
+  }
+  .answers {
+    gap: 15px
+  }
+  .answers__item {
+    width: 290px;
+    height: 65px;
+    font-size: 24px
+  }
+}
+@media screen and (max-width:595px) {
+  .quize .container {
+    width: 95vw
+  }
+  .quize__flag-title {
+    font-size: 22px
+  }
+  .answers__item {
+    width: 100%;
+    font-size: 21px
+  }
+}
+@media screen and (max-width:450px) {
+  .quize__flag-img {
+    width: 330px;
+    height: 175px
+  }
+  .quize__next-question {
+    -ms-grid-column: 1;
+    grid-column: 1
+  }
+  .answers {
+    -ms-grid-rows: 60px (75px)[5] 1fr;
+    grid-template-rows: 60px repeat(5,75px) 1fr;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr
+  }
+  .asd {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+  }
+}
+@media screen and (max-width:360px) {
+  .quize__flag-img {
+    width: 300px;
+    height: 158px
+  }
+  .quize__flag-title {
+    font-size: 19px
+  }
+}
+@media screen and (max-width:320px) {
+  .quize__flag-img {
+    width: 290px;
+    height: 150px
+  }
 }
 .about__title,
 .popular-flags__title {
@@ -716,9 +836,6 @@ body {
   justify-content: center
 }
 .popular-flags__item {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -734,61 +851,11 @@ body {
   border-radius: 8px
 }
 .popular-flags__item-img {
-  max-width: 100%;
-  -webkit-transition: -webkit-transform .3s ease;
-  transition: -webkit-transform .3s ease;
-  -o-transition: transform .3s ease;
-  transition: transform .3s ease;
-  transition: transform .3s ease,-webkit-transform .3s ease;
   width: 307px;
   height: 162px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat
-}
-.popular-flags__item-img:hover {
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%)
-}
-.popular-flags__item__item::after,
-.popular-flags__item__item::before {
-  position: absolute;
-  z-index: -1;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  background-color: #333;
-  text-align: center;
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
-  -o-transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
-  -webkit-transform: translateX(-80px);
-  -ms-transform: translateX(-80px);
-  transform: translateX(-80px)
-}
-.popular-flags__item__item::before {
-  padding: 30px;
-  height: 30%;
-  color: #000;
-  content: attr(data-title);
-  font-weight: 700;
-  font-size: 22px
-}
-.popular-flags__item__item::after {
-  top: 30%;
-  padding: 0 30px;
-  height: 70%;
-  color: #d7bb97;
-  content: attr(data-description)
-}
-.popular-flags__item__item:hover::after,
-.popular-flags__item__item:hover::before {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0)
 }
 .popular-flags__item-img_USA {
   background-image: url(../img/dist/flags/USA.svg)

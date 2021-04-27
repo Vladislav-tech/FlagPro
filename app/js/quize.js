@@ -1,4 +1,5 @@
-if (window.location.pathname === '/quize.html') {
+console.log(document.getElementById('quize-page'));
+if (document.getElementById('quize-page')) {
   //Contries from contriesArray.js
   //Class FlagQuize from classQuize.js
 
@@ -27,7 +28,7 @@ if (window.location.pathname === '/quize.html') {
     content: 'Закончить викторину и подвести итоги',
   });
 
-
+  console.log('click');
   const startPage = document.querySelector('.start-page');
   const quizePage = document.querySelector('.quize');
   const flagPlace = document.querySelector('.quize__flag-img');
