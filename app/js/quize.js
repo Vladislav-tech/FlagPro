@@ -47,6 +47,9 @@ if (document.getElementById('quize-page')) {
   const midTime = document.querySelector('.table__mid-time');
   const leftLifes = document.querySelector('.table__left-lifes');
 
+  const progressbar = document.querySelector('.quize__progressbar-fill');
+  const progressbarPercent = document.querySelector('.quize__progressbar-percent');
+
   class FlagQuize {
 
     constructor(options) {
@@ -121,6 +124,9 @@ if (document.getElementById('quize-page')) {
       
       console.log(rightAnswer);
       
+      progressbar.style.width = Math.floor(this.counter / this.contries.length * 100) + '%';
+      progressbarPercent.textContent = Math.floor(this.counter / this.contries.length * 100) + '%';
+
       this.rightAnswer = rightAnswer;
       this.counter++;
       this.lifes = lifes.length;
@@ -136,11 +142,9 @@ if (document.getElementById('quize-page')) {
       });
     }
 
-    checkAnswer() {
-      
+    checkAnswer() {      
       answersField.addEventListener('click', (evt) => {
         let target = evt.target;
-
         if (!target.matches('.answers__item')) return;
 
         console.log(this.rightAnswer);

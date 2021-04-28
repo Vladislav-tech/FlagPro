@@ -14,8 +14,13 @@
 	justify-content: center;
 	align-items: center;
 
-    &__btn {
+    &__inner {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__btn {
         width: 200px;
         height: 70px;
         color: #ffffff;
@@ -31,6 +36,23 @@
         text-shadow: 1px 1px black;
         transform: scale(1.05);
     }
+
+    &__description {
+        font-size: 18px;
+        max-width: 511px;
+        font-weight: 500;
+        line-height: 22px;
+        margin-bottom: 18px;
+
+        p {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__life {
+        font-size: 18px;
+        color: red;
+    }
 }
 
 .quize {
@@ -45,17 +67,23 @@
         top: 0;
         padding: 2px;
         width: 100%;
-        height: 10px;
+        height: 14px;
         background-color: $white;
         border-radius: 12px;
         border: 1px solid black;
     }
 
-    &__progrssbar-fill {
+    &__progressbar-fill {
         width: 0;
         height: 100%;
         border-radius: 12px;
         background-color: $quizeGreen;
+    }
+
+    &__progressbar-percent {
+        position: absolute;
+        top: 0;
+        left: 50%;
     }
 
     &__flag {
