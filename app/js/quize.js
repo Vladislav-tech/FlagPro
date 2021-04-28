@@ -147,8 +147,8 @@ if (document.getElementById('quize-page')) {
         if (target.textContent === this.rightAnswer) {
           console.log(target);
           target.style.backgroundColor = '#48E445';
-          if (this.counter === 10) {
-            btnFinishGame.style.display = 'block'
+          if (this.counter === this.contries.length) {
+            btnFinishGame.style.display = 'block';
           } else {
             btnNextQuestion.style.display = 'block';
           }
