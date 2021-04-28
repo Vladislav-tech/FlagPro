@@ -138,7 +138,6 @@ if (document.getElementById('quize-page')) {
 
     checkAnswer() {
       
-      let counter = 0;
       answersField.addEventListener('click', (evt) => {
         let target = evt.target;
 
@@ -148,7 +147,7 @@ if (document.getElementById('quize-page')) {
         if (target.textContent === this.rightAnswer) {
           console.log(target);
           target.style.backgroundColor = '#48E445';
-          if (counter === 9) {
+          if (this.counter === 10) {
             btnFinishGame.style.display = 'block'
           } else {
             btnNextQuestion.style.display = 'block';
@@ -160,7 +159,6 @@ if (document.getElementById('quize-page')) {
             this.endGame();
           }
         }
-        counter++;
       });
     }
 

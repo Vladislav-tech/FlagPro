@@ -11,13 +11,6 @@ const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const del = require('del');
 
-const ghPages = require('gh-pages');
-const path = require('path');
-
-function deploy(cb) {
-  ghPages.publish(path.join(process.cwd(), 'dist/**/*'), cb);
-}
-
 function browsersync() {
   browserSync.init({
     server: { baseDir: 'app/'},
@@ -75,7 +68,6 @@ function buildCopy() {
   .pipe(dest('dist'));
 }
 
-exports.deploy = deploy;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.styles = styles;
