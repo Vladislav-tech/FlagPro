@@ -215,8 +215,20 @@ h6 {
   -ms-flex-align: center;
   align-items: center
 }
-.start-page__btn {
+.start-page__inner {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.start-page__btn {
   width: 200px;
   height: 70px;
   color: #fff;
@@ -236,6 +248,20 @@ h6 {
   -ms-transform: scale(1.05);
   transform: scale(1.05)
 }
+.start-page__description {
+  font-size: 18px;
+  max-width: 511px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 18px
+}
+.start-page__description p {
+  margin-bottom: 10px
+}
+.start-page__life {
+  font-size: 18px;
+  color: red
+}
 .quize {
   display: none
 }
@@ -247,16 +273,21 @@ h6 {
   top: 0;
   padding: 2px;
   width: 100%;
-  height: 10px;
+  height: 14px;
   background-color: #fff;
   border-radius: 12px;
   border: 1px solid #000
 }
-.quize__progrssbar-fill {
+.quize__progressbar-fill {
   width: 0;
   height: 100%;
   border-radius: 12px;
   background-color: #48e445
+}
+.quize__progressbar-percent {
+  position: absolute;
+  top: 0;
+  left: 50%
 }
 .quize__flag {
   position: relative;
