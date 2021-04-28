@@ -50,7 +50,26 @@
 
       <div class="quize-page__wrapper">
         <section class="start-page" id="particles">
-          <button class="start-page__btn gradient-anim ripple" id="start-quzie">Начать викторину</button>
+          <div class="start-page__inner">
+            <div class="start-page__description">
+             <p>
+              Вам будут показаны несколько флагов. Вы должны будете выбрать правильные ответы.
+              У вас есть 3 жизни 
+              <i class="fas fa-heart start-page__life"></i>
+              <i class="fas fa-heart start-page__life"></i>
+              <i class="fas fa-heart start-page__life"></i>
+             </p>
+             <p>
+               Вы можете воспользоваться одной подсказкой
+               <img src="img/dist/icons/lightbulb.svg" alt="подсказка" width="28" height=28>
+             </p>
+             <p>
+               После выбора флага нажмите на стрелку для перехода к следующему заданию
+             </p>
+            </div>
+            <button class="start-page__btn gradient-anim ripple" id="start-quzie">Начать викторину</button>
+          </div>
+
         </section>
 
         <section class="quize">
@@ -58,7 +77,8 @@
   
             <div class="quize__flag">
               <div class="quize__progressbar">
-                <div class="quize__progrssbar-fill"></div>
+                <div class="quize__progressbar-percent">0%</div>
+                <div class="quize__progressbar-fill"></div>
               </div>
               <div class="quize__flag-img"></div>
               <h3 class="quize__flag-title">Флаг какой страны изображён?</h3>
@@ -125,7 +145,6 @@
               </svg>
             </div>
           </div>
-
         </section>
 
         <section class="stats">
