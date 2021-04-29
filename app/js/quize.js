@@ -35,14 +35,14 @@ if (document.getElementById('quize-page')) {
   const lifes = document.querySelectorAll('.quize__life');
   const tip = document.getElementById('tip');
   const buttons = document.querySelectorAll('.answers__item');
-  const btnNextQuestion = document.querySelector('.quize__next-question');
   const btnFinishGame = document.getElementById('finish-game');
   const time = document.querySelector('.quize__time');
   const answersField = document.querySelector('.answers');
   const btnStartQuize = document.querySelector('#start-quzie');
   const stats = document.querySelector('.stats');
 
-  const totalAnswers = document.querySelector('.table__questions');
+  const totalQuestions = document.querySelector('.table__questions');
+  const finishedQuestions = document.querySelector('.table__finished-questions');
   const usedTime = document.querySelector('.table__time');
   const midTime = document.querySelector('.table__mid-time');
   const leftLifes = document.querySelector('.table__left-lifes');
@@ -61,7 +61,6 @@ if (document.getElementById('quize-page')) {
     }
 
     timer() {
-
       let seconds = 0;
       let minutes = 0;
 
@@ -90,8 +89,9 @@ if (document.getElementById('quize-page')) {
     }
 
     generateFlag() {
-      console.log('class counter: ',this.counter);
+      console.log('class counter: ', this.counter);
       console.log(this.contries);
+
       flagPlace.style.backgroundImage = `url("${this.contries[this.counter].flag}")`;
     }
 
@@ -128,7 +128,6 @@ if (document.getElementById('quize-page')) {
       progressbarPercent.textContent = Math.floor(this.counter / this.contries.length * 100) + '%';
 
       this.rightAnswer = rightAnswer;
-      this.counter++;
       this.lifes = lifes.length;
     }
 
@@ -137,7 +136,9 @@ if (document.getElementById('quize-page')) {
       buttons.forEach(element => {
         if (element.textContent === this.rightAnswer) {
           element.style.backgroundColor = '#48E445';
-          btnNextQuestion.style.display = 'block';
+          setTimeout(()=> {
+            this.nextQuestion();
+          }, 600);
         }
       });
     }
@@ -154,7 +155,10 @@ if (document.getElementById('quize-page')) {
           if (this.counter === this.contries.length) {
             btnFinishGame.style.display = 'block';
           } else {
-            btnNextQuestion.style.display = 'block';
+            setTimeout(()=> {
+              this.nextQuestion();
+            }, 600);
+            
           }
         } else {
           lifes[this.lifes - 1].style.color = 'white';
@@ -171,8 +175,18 @@ if (document.getElementById('quize-page')) {
       this.generateAnswers();
     }
 
+    nextQuestion() {
+      this.counter++;
+      this.generateFlag();
+      this.generateAnswers();
+      buttons.forEach(button => {
+        button.style.backgroundColor = '#FFB800';
+      });
+    }
+
     showStats() {
-      totalAnswers.textContent = this.contries.length;
+      totalQuestions.textContent = this.contries.length;
+      finishedQuestions.textContent = this.counter;
       usedTime.textContent = time.textContent;
       leftLifes.textContent = this.lifes;
     }
@@ -197,18 +211,6 @@ if (document.getElementById('quize-page')) {
     const quize = new FlagQuize(contries);
     quize.startGame();
     quize.checkAnswer();
-
-    btnNextQuestion.addEventListener('click', function() {
-      
-      quize.generateFlag();
-      quize.generateAnswers();
-      
-
-      buttons.forEach(element => {
-        element.style.backgroundColor = '#FFB800';
-      });
-      btnNextQuestion.style.display = 'none';
-    });
 
     btnFinishGame.addEventListener('click', function() {
       quize.endGame();
