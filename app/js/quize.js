@@ -1,4 +1,3 @@
-console.log(document.getElementById('quize-page'));
 if (document.getElementById('quize-page')) {
   //Contries from contriesArray.js
   //Class FlagQuize from classQuize.js
@@ -28,7 +27,6 @@ if (document.getElementById('quize-page')) {
     content: 'Закончить викторину и подвести итоги',
   });
 
-  console.log('click');
   const startPage = document.querySelector('.start-page');
   const quizePage = document.querySelector('.quize');
   const flagPlace = document.querySelector('.quize__flag-img');
@@ -124,8 +122,6 @@ if (document.getElementById('quize-page')) {
       
       console.log(rightAnswer);
       
-      progressbar.style.width = Math.floor(this.counter / this.contries.length * 100) + '%';
-      progressbarPercent.textContent = Math.floor(this.counter / this.contries.length * 100) + '%';
 
       this.rightAnswer = rightAnswer;
       this.lifes = lifes.length;
@@ -148,17 +144,20 @@ if (document.getElementById('quize-page')) {
         let target = evt.target;
         if (!target.matches('.answers__item')) return;
 
-        console.log(this.rightAnswer);
         if (target.textContent === this.rightAnswer) {
-          console.log(target);
           target.style.backgroundColor = '#48E445';
-          if (this.counter === this.contries.length) {
-            btnFinishGame.style.display = 'block';
-          } else {
+
+          if (this.counter < this.contries.length - 1) {
             setTimeout(()=> {
               this.nextQuestion();
             }, 600);
-            
+          } else {
+            this.counter++;
+            console.log(this.counter);
+            progressbar.style.width = Math.floor(this.counter / this.contries.length * 100) + '%';
+            progressbarPercent.textContent = Math.floor(this.counter / this.contries.length * 100) + '%';
+      
+            btnFinishGame.style.display = 'block';
           }
         } else {
           lifes[this.lifes - 1].style.color = 'white';
@@ -182,6 +181,8 @@ if (document.getElementById('quize-page')) {
       buttons.forEach(button => {
         button.style.backgroundColor = '#FFB800';
       });
+      progressbar.style.width = Math.floor(this.counter / this.contries.length * 100) + '%';
+      progressbarPercent.textContent = Math.floor(this.counter / this.contries.length * 100) + '%';
     }
 
     showStats() {

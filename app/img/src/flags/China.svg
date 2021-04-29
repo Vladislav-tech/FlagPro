@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="600" viewBox="0 0 30 20">
-<defs>
-<path id="s" d="M0,-1 0.587785,0.809017 -0.951057,-0.309017H0.951057L-0.587785,0.809017z" fill="#FFFF00"/>
-</defs>
-<rect width="30" height="20" fill="#EE1C25"/>
-<use xlink:href="#s" transform="translate(5,5) scale(3)"/>
-<use xlink:href="#s" transform="translate(10,2) rotate(23.036243)"/>
-<use xlink:href="#s" transform="translate(12,4) rotate(45.869898)"/>
-<use xlink:href="#s" transform="translate(12,7) rotate(69.945396)"/>
-<use xlink:href="#s" transform="translate(10,9) rotate(20.659808)"/>
+<svg width="1060" height="600" viewBox="0 0 1060 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1060 0H0V600H1060V0Z" fill="#EE1C25"/>
+<path d="M176.667 60L238.972 222.812L75.8546 122.188H277.479L114.361 222.812L176.667 60Z" fill="#FFFF00"/>
+<path d="M367.16 32.3923L361.26 89.2353L326.682 40.3039L388.53 62.6336L323.035 75.4349L367.16 32.3923Z" fill="#FFFF00"/>
+<path d="M449.361 99.1113L417.943 149.556L408.439 93.0661L455.235 134.024L389.022 124.243L449.361 99.1113Z" fill="#FFFF00"/>
+<path d="M457.191 199.712L404.27 234.887L422.733 180.019L445.78 233.623L390.026 201.758L457.191 199.712Z" fill="#FFFF00"/>
+<path d="M365.8 241.929L362.681 298.931L325.743 251.259L388.629 271.392L323.815 286.488L365.8 241.929Z" fill="#FFFF00"/>
 </svg>
