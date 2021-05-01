@@ -36,6 +36,9 @@ function scripts() {
     'app/js/contriesArray.js',
     'app/js/particles.min.js',
     'app/js/gradientHover.js',
+    'app/js/smoothAppearance.js',
+    'app/js/scrollIndicator.js',
+    'app/js/tabs.js',
     'app/js/quize.js',
   ])
   .pipe(concat('app.min.js'))

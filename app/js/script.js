@@ -48,6 +48,15 @@ function navSlide() {
 
 navSlide();
 
+try {
+  tippy('#test-skills', {
+    content: 'Пройти викторину с разными уровнями сложности',
+  });
+} catch (e) {
+
+}
+
+
 if (document.querySelector('#particles')) {
   particlesJS('particles',
   

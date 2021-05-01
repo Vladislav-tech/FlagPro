@@ -19,12 +19,24 @@ if (document.getElementById('quize-page')) {
     content: 'Жизнь'
   });
 
-  tippy('#next-question', {
-    content: 'Перейти к следующему вопросу',
-  });
-
   tippy('#finish-game', {
     content: 'Закончить викторину и подвести итоги',
+  });
+
+  tippy("#questions", {
+    content: 'Информация по вопросам',
+  });
+
+  tippy("#time", {
+    content: 'Информация по времени',
+  });
+
+  tippy("#score", {
+    content: 'Заработанные баллы',
+  });
+
+  tippy("#info", {
+    content: 'Общая информация',
   });
 
   const startPage = document.querySelector('.start-page');
@@ -39,9 +51,9 @@ if (document.getElementById('quize-page')) {
   const btnStartQuize = document.querySelector('#start-quzie');
   const stats = document.querySelector('.stats');
 
-  const totalQuestions = document.querySelector('.table__questions');
-  const finishedQuestions = document.querySelector('.table__finished-questions');
-  const usedTime = document.querySelector('.table__time');
+  const totalQuestions = document.querySelector('.tab-content__total-questions');
+  const finishedQuestions = document.querySelector('.tab-content__finished-questions');
+  const usedTime = document.querySelector('.tab-content__spend-time');
   const midTime = document.querySelector('.table__mid-time');
   const leftLifes = document.querySelector('.table__left-lifes');
 
@@ -189,11 +201,11 @@ if (document.getElementById('quize-page')) {
       totalQuestions.textContent = this.contries.length;
       finishedQuestions.textContent = this.counter;
       usedTime.textContent = time.textContent;
-      leftLifes.textContent = this.lifes;
+      // leftLifes.textContent = this.lifes;
     }
 
     endGame() {
-      stats.style.display = 'block';
+      stats.style.display = 'flex';
       quizePage.style.display = 'none';
       
       this.showStats();

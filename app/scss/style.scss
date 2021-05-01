@@ -4,6 +4,7 @@
 @import "underlineLinks.scss";
 @import "gradientHover.scss";
 @import "quize.scss";
+@import "scrollbar.scss";
 
 %h2 {
   font-weight: bold;
@@ -26,6 +27,17 @@
   font-size: 20px;
   font-weight: 700;
   text-shadow: 1px 1px 1px #212121;
+}
+
+.element-animation{
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.element-animation.element-show {
+  opacity: 1;
+  transition: all 1.5s;
+  transform: translateY(0%);
 }
 
 .link {
@@ -161,11 +173,18 @@ body {
 
     &__logo {
       @extend %logo;
+
+      &:focus {
+        border: 2px solid #fff;
+        border-radius: 5px;
+      }
+
+      &:active {
+        border: none;
+      }
   }
 
 }
-
-
 
 .nav-list {
   display: flex;
@@ -173,11 +192,36 @@ body {
   width: 70%;
 
   &__link {
+    position: relative;
     color: rgb(255, 255, 255);
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 16px;
+
+    &:active {
+      text-shadow: 0 0 black;
+    }
+
+    &:visited {
+      
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 3px;
+      left: 0;
+      bottom: -8px;
+      border-radius: 100px;
+      background-color: gold;
+      transition: .4s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
 
 }
@@ -221,6 +265,10 @@ body {
       justify-content: center;
       height: 100%;
       transition: .4s;
+
+      &:hover::after {
+        width: 0;
+      }
     }
 
     .nav-list__link:hover {
@@ -235,11 +283,25 @@ body {
 }
 
 .nav-active {
-        transform: translateX(0%);
+  transform: translateX(0%);
 }
 
+.progress-container {
+  position: absolute;
+  bottom: 0;
+  display: none;
+  width: 100%;
+  height: 5px;
+  background-color: #ccc;
+}
 
-  }
+.scroll-indicator {
+  width: 0;
+  height: 100%;
+  background-color: gold;
+}
+
+}
   
 
   
@@ -373,6 +435,7 @@ body {
     @extend %description;
     margin-bottom: 100px;
   }
+
 }
 
 
@@ -414,6 +477,10 @@ body {
   .social-media__link {
     color: rgb(0, 0, 0);
     margin-bottom: 20px;
+
+    &:active {
+      border: none;
+    }
   }
 
   .social-media .social-media__button{
@@ -487,6 +554,14 @@ body {
 
 }
 
+@media screen and(max-width: 900px) {
+  .header {
+    .nav-list__link {
+    font-size: 14px;
+    }
+  }
+}
+
 @media screen and(max-width: 841px) {
   .popular-flags {
     .container {
@@ -545,6 +620,10 @@ body {
 
   .container {
     width: 96%;
+  }
+
+  .popular-flags__item {
+    margin: 45px 0 20px 0;
   }
 
   .footer {

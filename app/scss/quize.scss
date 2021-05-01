@@ -1,3 +1,19 @@
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.fade {
+    animation: fade 2s ease;
+}
+
 .quize-page {
     background-color: $quizeBackground;
 
@@ -20,6 +36,7 @@
         flex-direction: column;
         align-items: center;
     }
+
     &__btn {
         width: 200px;
         height: 70px;
@@ -130,6 +147,7 @@
 
     &__life:hover {
         color: #dd0000;
+        transform: scale(1.25);
     }
 
     &__time {
@@ -147,15 +165,7 @@
     }
 
     &__tip:hover {
-        transform: scale(0.92);
-    }
-
-    &__next-question {
-        display: none;
-        grid-column: 2;
-        margin-left: auto;
-        cursor: pointer;
-        transition: .4s;
+        transform: scale(0.85);
     }
 
     &__finish-game {
@@ -164,6 +174,10 @@
         margin-left: auto;
         cursor: pointer;
         transition: .4s;
+    }
+
+    &__finish-game {
+        transform: translateX(10px);
     }
 
     // &__next-question:hover {
@@ -210,42 +224,93 @@
 
 .stats {
     display: none;
+    justify-content: center;
     &__inner {
-        padding: 50px 0 0 0;
+        padding: 3.5rem 1rem 0 1rem;
         margin: 150px 0;
-        width: 650px;
+        width: 80vw;
         height: 600px;
         background-color: $white;
         border-radius: 12px;
     }
 
-    &__fires {
+    .show {
         display: flex;
-        justify-content: space-around;
-        font-size: 55px;
-        color: red;
-    }
+        flex-direction: column;
+      }
+      
+      .hide {
+        display: none;
+      }
 
-    &__title {
-        margin-top: 38px;
-        font-size: 38px;
-        font-weight: 600;
-        text-align: center;
-    }
+    .info {
+        height: 100%;
+        &__header {
+            display: flex;
+            margin-bottom: 50px;
 
-    &__table {
-        width: 100%;
-        margin-top: 50px;
-        font-size: 20px;
-        border: 1px solid black;
-        border-collapse: collapse;
+            li {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25%;
+                height: 42px;
+                font-size: 18px;
+                border: 1px solid black;
+                cursor: pointer;
+                transition: .4s;
 
-        td {
-            min-width: 50px;
-            padding: 5px;
+                i {
+                    margin-left: 10px;
+                }
+
+                @keyframes AddUnderlineTab {
+                    0% {
+                        width: 0;
+                    }
+
+                    100% {
+                        width: 100%
+                    }
+                }
+
+                @keyframes removeUnderlineTab {
+                    0% {
+                        width: 100%;
+                    }
+
+                    100% {
+                        width: 0;
+                    }
+                }
+
+                .header-tab__current-element {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 4px;
+                    background: darkblue;
+                }
+            }
+
+            li:hover {
+                background-color: #f6f6f6;
+            }
+        }
+
+        &__tab-content {
             border: 1px solid black;
+
+            h3 {
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 40px;
+            }
         }
     }
+
 }
 
 
@@ -278,6 +343,18 @@
             font-size: 24px;
         }
     }
+
+    .stats {
+        .info {
+            &__header {
+                flex-direction: column;
+                li {
+                    width: 100%;
+                }
+            }
+        }        
+    }
+
 }
 
 @media screen and(max-width: 595px) {
@@ -295,6 +372,12 @@
         &__item {
             width: 100%;
             font-size: 21px;
+        }
+    }
+
+    .stats {
+        &__inner {
+            width: 90vw;
         }
     }
 }
