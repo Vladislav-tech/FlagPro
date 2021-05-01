@@ -67,6 +67,13 @@
                После выбора флага вы перейдёте к следующему заданию.
              </p>
             </div>
+            <h4 class="level-title">Уровень сложности</h4>
+            <select class="start-page__levels" name="levels" id="levels">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
             <button class="gradient-anim start-page__btn" id="start-quzie">Начать викторину</button>
           </div>
         </section>
@@ -126,85 +133,52 @@
         </section>
 
         <section class="stats fade" id="particles">
-            <!-- <div class="stats__inner">
-              <div class="stats__fires">
-                <i class="fas fa-fire"></i>
-                <i class="fas fa-fire"></i>
-                <i class="fas fa-fire"></i>
-                <i class="fas fa-fire"></i>
+          <div class="stats__inner">
+            <h2 class="stats__title"></h2>
+            <div class="info">
+              <ul class="info__header">
+                <li class="info__header-tab header-tab" id="questions">
+                  <span>Вопросы</span> <i class="fas fa-question-circle"></i>
+                  <div class="header-tab__current-element"></div>
+                </li>
+                <li class="info__header-tab header-tab" id="time">
+                  <span>Время</span> <i class="far fa-clock"></i>
+                  <div class="header-tab__current-element"></div>
+                </li>
+                <li class="info__header-tab header-tab" id="score">
+                  <span>Баллы</span> <i class="fas fa-star"></i>
+                  <div class="header-tab__current-element"></div>
+                </li>
+                <li class="info__header-tab header-tab" id="info">
+                  <span>Общее </span> <i class="fas fa-info-circle"></i>
+                  <div class="header-tab__current-element"></div>
+                </li>
+              </ul>
+          
+              <div class="info__tab-content tab-content fade">
+                <h3 class="tab-content__title">Вопросы</h3>
+                <p class="tab-content__text">Вы ответили на <span class="tab-content__finished-questions"></span> / <span class="tab-content__total-questions"></span></p>
+                <p class="tab-content__mistakes mistakes">Вы ошибились <span class="mistakes-count"></span></p>
+                <div class="tab-content__mistakes-info"></div>
               </div>
-
-              <h3 class="stats__title">Вы прошли викторину! Поздравляем!</h3>
-
-              <table class="stats__table table">
-                <tr>
-                  <td>Количество вопросов:</td>
-                  <td class="table__questions"></td>
-                </tr>
-                <tr>
-                  <td>Количество пройденных вопросов:</td>
-                  <td class="table__finished-questions"></td>
-                </tr>
-                <tr>
-                  <td>Потраченное время:</td>
-                  <td class="table__time"></td>
-                </tr>
-                <tr>
-                  <td>Среднее время на вопрос:</td>
-                  <td class="table__mid-time"></td>
-                </tr>
-                <tr>
-                  <td>Оставшиеся жизни:</td>
-                  <td class="table__left-lifes"></td>
-                </tr>
-              </table>
-            </div> -->
-            <div class="stats__inner">
-              <h2 class="stats__title"></h2>
-              <div class="info">
-                <ul class="info__header">
-                  <li class="info__header-tab header-tab" id="questions">
-                    <span>Вопросы</span> <i class="fas fa-question-circle"></i>
-                    <div class="header-tab__current-element"></div>
-                  </li>
-                  <li class="info__header-tab header-tab" id="time">
-                    <span>Время</span> <i class="far fa-clock"></i>
-                    <div class="header-tab__current-element"></div>
-                  </li>
-                  <li class="info__header-tab header-tab" id="score">
-                    <span>Баллы</span> <i class="fas fa-star"></i>
-                    <div class="header-tab__current-element"></div>
-                  </li>
-                  <li class="info__header-tab header-tab" id="info">
-                    <span>Общее </span> <i class="fas fa-info-circle"></i>
-                    <div class="header-tab__current-element"></div>
-                  </li>
-                </ul>
-            
-                <div class="info__tab-content tab-content fade">
-                  <h3 class="tab-content__title">Вопросы</h3>
-                  <p class="tab-content__text">Вы ответили на <span class="tab-content__finished-questions"></span> / <span class="tab-content__total-questions"></span></p>
-                  <p class="tab-content__mistakes mistakes">Вы ошибились <span class="mistakes-count"></span></p>
-                  <div class="tab-content__mistakes-info"></div>
-                </div>
-                
-                <div class="info__tab-content tab-content fade">
-                  <h3 class="tab-content__title">Время</h3>
-                  <p class="tab-content__text">Потрачено <span class="tab-content__spend-time"></span> / <span class="tab-content__total-time"></span></p>
-                </div>
-                
-                <div class="info__tab-content tab-content fade">
-                  <h3 class="tab-content__title">Баллы</h3>
-                  <p class="tab-content__text">Вам удалось заработать <span class="tab-content__user-score"></span> / <span class="tab-content__max-score"></span></p>
-                </div>
-            
-                <div class="info__tab-content tab-content fade">
-                  <h3 class="tab-content__title">Общее</h3>
-                  <p class="tab-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta molestiae itaque magnam explicabo nihil sint libero dolore dolor iste quas ipsum consequuntur eos maiores, non omnis magni fugiat reiciendis porro.
-                  Blanditiis, quae illum. Ad iure excepturi ipsam! Facere a nisi natus est dolorem harum obcaecati eius corrupti provident at pariatur dignissimos, id molestiae sequi. Totam nostrum aliquid reiciendis deserunt est?</p>
-                </div>
+              
+              <div class="info__tab-content tab-content fade">
+                <h3 class="tab-content__title">Время</h3>
+                <p class="tab-content__text">Потрачено <span class="tab-content__spend-time"></span> / <span class="tab-content__total-time"></span></p>
+              </div>
+              
+              <div class="info__tab-content tab-content fade">
+                <h3 class="tab-content__title">Баллы</h3>
+                <p class="tab-content__text">Вам удалось заработать <span class="tab-content__user-score"></span> / <span class="tab-content__max-score"></span></p>
+              </div>
+          
+              <div class="info__tab-content tab-content fade">
+                <h3 class="tab-content__title">Общее</h3>
+                <p class="tab-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta molestiae itaque magnam explicabo nihil sint libero dolore dolor iste quas ipsum consequuntur eos maiores, non omnis magni fugiat reiciendis porro.
+                Blanditiis, quae illum. Ad iure excepturi ipsam! Facere a nisi natus est dolorem harum obcaecati eius corrupti provident at pariatur dignissimos, id molestiae sequi. Totam nostrum aliquid reiciendis deserunt est?</p>
               </div>
             </div>
+          </div>
         </section>
       </div>
       <footer class="footer">

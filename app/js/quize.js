@@ -60,12 +60,25 @@ if (document.getElementById('quize-page')) {
   const progressbar = document.querySelector('.quize__progressbar-fill');
   const progressbarPercent = document.querySelector('.quize__progressbar-percent');
 
+  const difficultyLevel = document.getElementById('levels');
+
+  console.log(difficultyLevel)
+  difficultyLevel.addEventListener('change', selectDifficultyLevel);
+  function selectDifficultyLevel() {
+    console.log(difficultyLevel.value);
+  }
+
   class FlagQuize {
 
     constructor(options) {
-      this.contries = options.slice();
+      this.difficultyLevel = Number(options.difficultyLevel);
+
+      this.contries = options.contries.filter(element => {
+        return element.level <= this.difficultyLevel;
+      }).slice();
       this.counter = 0;
 
+      console.log('level: ', this.difficultyLevel);
       this.timer();
       shuffleArray(this.contries);
     }
@@ -221,7 +234,10 @@ if (document.getElementById('quize-page')) {
     startPage.style.display = 'none';
     quizePage.style.display = 'block';
 
-    const quize = new FlagQuize(contries);
+    const quize = new FlagQuize({
+      contries: contries,
+      difficultyLevel: difficultyLevel.value,
+    });
     quize.startGame();
     quize.checkAnswer();
 

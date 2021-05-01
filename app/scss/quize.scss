@@ -54,12 +54,15 @@
         transform: scale(1.05);
     }
 
-    &__description {
+    &__description,
+    .level-title {
+        margin-bottom: 18px;
         font-size: 18px;
+        color: white;
+        text-shadow: 0 0 5px black;
         max-width: 511px;
         font-weight: 500;
         line-height: 22px;
-        margin-bottom: 18px;
 
         p {
             margin-bottom: 10px;
@@ -69,6 +72,21 @@
     &__life {
         font-size: 18px;
         color: red;
+    }
+
+    &__levels {
+        margin-bottom: 25px;
+        width: 50%;
+        font-size: 16px;
+        background-color: #48e445;
+        color: white;
+        border-radius: 6px;
+        box-shadow: 1px 1px 3px #000000a3;
+        transition: .4s;
+    }
+
+    &__levels:hover {
+        background-color: #1fc01c
     }
 }
 

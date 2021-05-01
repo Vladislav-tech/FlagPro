@@ -276,19 +276,39 @@ h6 {
   -ms-transform: scale(1.05);
   transform: scale(1.05)
 }
+.start-page .level-title,
 .start-page__description {
+  margin-bottom: 18px;
   font-size: 18px;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
   max-width: 511px;
   font-weight: 500;
-  line-height: 22px;
-  margin-bottom: 18px
+  line-height: 22px
 }
+.start-page .level-title p,
 .start-page__description p {
   margin-bottom: 10px
 }
 .start-page__life {
   font-size: 18px;
   color: red
+}
+.start-page__levels {
+  margin-bottom: 25px;
+  width: 50%;
+  font-size: 16px;
+  background-color: #48e445;
+  color: #fff;
+  border-radius: 6px;
+  -webkit-box-shadow: 1px 1px 3px #000000a3;
+  box-shadow: 1px 1px 3px #000000a3;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s
+}
+.start-page__levels:hover {
+  background-color: #1fc01c
 }
 .quize {
   display: none
