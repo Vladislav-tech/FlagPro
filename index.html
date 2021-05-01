@@ -26,19 +26,19 @@
           </a>
           <ul class="nav-list">
             <li class="nav-list__item">
-              <a class="nav-list__link" href="#">Домой</a>
+              <a class="nav-list__link" tabindex="1" href="#">Домой</a>
             </li>
             <li class="nav-list__item">
-              <a class="nav-list__link" href="quize.html">Викторина</a>
+              <a class="nav-list__link" tabindex="2" href="quize.html">Викторина</a>
             </li>
             <li class="nav-list__item">
-              <a class="nav-list__link" href="#">Случайный факт</a>
+              <a class="nav-list__link" tabindex="3" href="#">Случайный факт</a>
             </li>
             <li class="nav-list__item">
-              <a class="nav-list__link" href="#about">О проекте</a>
+              <a class="nav-list__link" tabindex="4" href="#about">О проекте</a>
             </li>
             <li class="nav-list__item">
-              <a class="nav-list__link" href="#contacts">Контакты</a>
+              <a class="nav-list__link" tabindex="5" href="#contacts">Контакты</a>
             </li>
           </ul>
           <div class="burger">
@@ -46,11 +46,14 @@
               <div class="line2"></div>
               <div class="line3"></div>
           </div>
+          <div class="progress-container">
+            <div class="scroll-indicator" id="myBar"></div>
+          </div>
       </nav>
       </div>
     </header>
 
-    <section class="intro">
+    <section class="intro element-animation">
       <div class="intro__container container">
         <h1 class="intro__title">FlagPro - всё о флагах мира</h1>
         <p class="intro__description">
@@ -60,33 +63,39 @@
       </div>
     </section>
 
+    <!-- <button class="gradient-anim" style="
+    width: 200px;
+    height: 100px;
+    
+    ">Hover me</button> -->
+
     <section class="popular-flags">
       <div class="popular-flags__container container">
         <!--TODO: fix the title position-->
-        <h2 class="popular-flags__title">Самые популярные флаги мира</h2>
+        <h2 class="popular-flags__title element-animation element-animation">Самые популярные флаги мира</h2>
 
         <ul class="popular-flags__items">
-          <li class="popular-flags__item" data-title="США" data-description="Много текста">
+          <li class="popular-flags__item element-animation" data-title="США" data-description="Много текста">
             <div class="popular-flags__item-img popular-flags__item-img_USA"  data-title="США" data-description="Много текста"></div>
             <h5 class="popular-flags__item-title">США</h5>
           </li>
-          <li class="popular-flags__item">
+          <li class="popular-flags__item element-animation">
             <div class="popular-flags__item-img popular-flags__item-img_UK"></div>
             <h5 class="popular-flags__item-title">Великобритания</h5>
           </li>
-          <li class="popular-flags__item">
+          <li class="popular-flags__item element-animation">
             <div class="popular-flags__item-img popular-flags__item-img_Canada"></div>
             <h5 class="popular-flags__item-title">Канада</h5>
           </li>
-          <li class="popular-flags__item">
+          <li class="popular-flags__item element-animation">
             <div class="popular-flags__item-img popular-flags__item-img_France"></div>
             <h5 class="popular-flags__item-title">Франция</h5>
           </li>
-          <li class="popular-flags__item">
+          <li class="popular-flags__item element-animation">
             <div class="popular-flags__item-img popular-flags__item-img_Russia"></div>
             <h5 class="popular-flags__item-title">Россия</h5>
           </li>
-          <li class="popular-flags__item">
+          <li class="popular-flags__item element-animation">
             <div class="popular-flags__item-img popular-flags__item-img_Germany"></div>
             <h5 class="popular-flags__item-title">Германия</h5>
           </li>
@@ -94,13 +103,13 @@
       </div>
     </section>
 
-    <section class="about" id="about">
+    <section class="about element-animation" id="about">
       <div class="about__container container">
         <h2 class="about__title">О проекте</h2>
         <p class="about__description">
           <b>FlagPro</b> - это простое приложение, где вы можете узнать какой-то
           новый для вас <a href="#" class="background-hover">факт</a>,
-          <a href="#" class="background-hover">протестировать свои знания</a>, пройдя простую викторину
+          <a href="quize.html" class="background-hover" id="test-skills">протестировать свои знания</a>, пройдя простую викторину
           на знание флагов. Данное приложение написано одним человеком, который
           желает стать хорошим веб-разработчиком. Наслаждайтесь!
         </p>
@@ -163,8 +172,8 @@
       </div>
       </div>
     </footer>
-    <!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script> -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <script src="js/app.min.js"></script>
   </body>
 </html>
