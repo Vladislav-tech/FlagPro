@@ -13,7 +13,7 @@
     <meta name="keywords" content="Флаги, страны, мир, Земля, викторина, сайт, факты"/>
     <script src="https://kit.fontawesome.com/146c272e54.js" crossorigin="anonymous"></script>
   </head>
-<body class="quize-page" id="quize-page">
+<body class="quiz-page" id="quiz-page">
     <header class="header">
         <div class="header__container container">
           <nav class="header__nav nav">
@@ -28,7 +28,7 @@
                 <a class="nav-list__link" href="index.html">Домой</a>
               </li>
               <li class="nav-list__item">
-                <a class="nav-list__link" href="quize.html">Викторина</a>
+                <a class="nav-list__link" href="quiz.html">Викторина</a>
               </li>
               <li class="nav-list__item">
                 <a class="nav-list__link" href="#">Случайный факт</a>
@@ -48,7 +48,7 @@
         </nav>
       </header>
 
-      <div class="quize-page__wrapper">
+      <div class="quiz-page__wrapper">
         <section class="start-page" id="particles">
           <div class="start-page__inner element-animation">
             <div class="start-page__description">
@@ -78,29 +78,33 @@
           </div>
         </section>
 
-        <section class="quize fade">
-          <div class="quize__container container">
+        <section class="quiz fade">
+          <div class="quiz__container container">
   
-            <div class="quize__flag">
-              <div class="quize__progressbar">
-                <div class="quize__progressbar-percent">0%</div>
-                <div class="quize__progressbar-fill"></div>
+            <div class="quiz__flag">
+              <div class="quiz__progressbar">
+                <div class="quiz__progressbar-percent">0%</div>
+                <div class="quiz__progressbar-fill"></div>
               </div>
-              <div class="quize__flag-img"></div>
-              <h3 class="quize__flag-title">Флаг какой страны изображён?</h3>
+              <div class="quiz__flag-img"></div>
+              <h3 class="quiz__flag-title">Флаг какой страны изображён?</h3>
             </div>
     
             <div class="answers">
-              <div class="quize__lifes">
+              <div class="quiz__lifes">
 
-                <i class="fas fa-heart quize__life"></i>
-                <i class="fas fa-heart quize__life"></i>
-                <i class="fas fa-heart quize__life"></i>
+                <i class="fas fa-heart quiz__life"></i>
+                <i class="fas fa-heart quiz__life"></i>
+                <i class="fas fa-heart quiz__life"></i>
               </div>
 
               <div class="asd">
-                <span class="quize__time" id="time">Время:</span>
-                <img src="img/dist/icons/lightbulb.svg" alt="подсказка" class="quize__tip" id="tip">
+                <span class="quiz__time" id="time">Время
+                  <span class="quiz__time-minutes" id="minutes">00</span>
+                  <span class="quiz__time-separator">:</span>
+                  <span class="quiz__time-seconds" id="seconds">00</span>
+                </span>
+                <img src="img/dist/icons/lightbulb.svg" alt="подсказка" class="quiz__tip" id="tip">
               </div>
 
               <button class="answers__item ripple" tabindex="1">США</button>
@@ -108,7 +112,7 @@
               <button class="answers__item ripple" tabindex="3">Китай</button>
               <button class="answers__item ripple" tabindex="4">Канада</button>
 
-              <svg width="116" height="94" viewBox="0 0 116 94" fill="none" xmlns="http://www.w3.org/2000/svg" class="quize__finish-game" id="finish-game">
+              <svg width="116" height="94" viewBox="0 0 116 94" fill="none" xmlns="http://www.w3.org/2000/svg" class="quiz__finish-game" id="finish-game">
                 <g filter="url(#filter0_d)">
                 <path d="M74.6535 32.4951H5V53.9802H74.6535L56.2871 72.3465L68.4158 84.4753L110 42.8911L68.4158 2L56.2871 14.1287L74.6535 32.4951Z" fill="#78A2D2" stroke="black" stroke-width="2"/>
                 <path d="M82.9703 27.9901L68.0693 13.0891" stroke="black"/>
@@ -165,6 +169,7 @@
               <div class="info__tab-content tab-content fade">
                 <h3 class="tab-content__title">Время</h3>
                 <p class="tab-content__text">Потрачено <span class="tab-content__spend-time"></span> / <span class="tab-content__total-time"></span></p>
+                <p>Среднее время на вопрос: <span class="tab-content__mid-time"></span></p>
               </div>
               
               <div class="info__tab-content tab-content fade">
@@ -181,6 +186,7 @@
           </div>
         </section>
       </div>
+
       <footer class="footer">
         <div class="footer__container container">
           <a href="index.html" title="Главная страница" class="logo-link">

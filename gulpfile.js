@@ -39,7 +39,7 @@ function scripts() {
     'app/js/smoothAppearance.js',
     'app/js/scrollIndicator.js',
     'app/js/tabs.js',
-    'app/js/quize.js',
+    'app/js/quiz.js',
   ])
   .pipe(concat('app.min.js'))
   // .pipe(uglify())

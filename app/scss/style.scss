@@ -3,7 +3,7 @@
 @import "ripple.scss";
 @import "underlineLinks.scss";
 @import "gradientHover.scss";
-@import "quize.scss";
+@import "quiz.scss";
 @import "scrollbar.scss";
 
 %h2 {
@@ -332,7 +332,7 @@ body {
 .intro {
 
   .container {
-    margin-top: 245px;
+    margin-top: 235px;
   }
 
   &__title {
@@ -427,7 +427,7 @@ body {
 
 .about {
   &__title {
-    margin-top: 253px;
+    margin-top: 120px;
     @extend %h2;
   }
 
@@ -476,11 +476,6 @@ body {
 
   .social-media__link {
     color: rgb(0, 0, 0);
-    margin-bottom: 20px;
-
-    &:active {
-      border: none;
-    }
   }
 
   .social-media .social-media__button{

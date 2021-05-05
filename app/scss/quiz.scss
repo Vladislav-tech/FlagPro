@@ -14,8 +14,8 @@
     animation: fade 2s ease;
 }
 
-.quize-page {
-    background-color: $quizeBackground;
+.quiz-page {
+    background-color: $quizBackground;
 
     &__wrapper {
         display: flex;
@@ -90,7 +90,7 @@
     }
 }
 
-.quize {
+.quiz {
     display: none;
 
     .container {
@@ -109,10 +109,10 @@
     }
 
     &__progressbar-fill {
-        width: 0;
+        width: 0%;
         height: 100%;
         border-radius: 12px;
-        background-color: $quizeGreen;
+        background-color: $quizGreen;
     }
 
     &__progressbar-percent {
@@ -220,14 +220,14 @@
         line-height: 37px;
         width: 310px;
         height: 74px;
-        background-color: $quizeOrange;
+        background-color: $quizOrange;
         border-radius: 8px;
         transition: .4s;
         cursor: pointer;
     }
 
     &__item:hover {
-        background-color: $quizeOrangeHover;
+        background-color: $quizOrangeHover;
         box-shadow: 1px 1px rgba(0, 0, 0, 0.747)
     }
 
@@ -333,7 +333,7 @@
 
 
 @media screen and(max-width: 662px) {
-    .quize {
+    .quiz {
         .container {
             width: 99%;
         }
@@ -376,7 +376,7 @@
 }
 
 @media screen and(max-width: 595px) {
-    .quize {
+    .quiz {
         .container {
             width: 95vw;
         }
@@ -401,7 +401,7 @@
 }
 
 @media screen and(max-width: 450px) {
-    .quize {
+    .quiz {
         &__flag-img {
             width: 330px;
             height: 175px;
@@ -423,7 +423,7 @@
 }
 
 @media screen and(max-width: 360px) {
-    .quize {
+    .quiz {
         &__flag-img {
             width: 300px;
             height: 158px;
@@ -436,7 +436,7 @@
 }
 
 @media screen and(max-width: 320px) {
-    .quize__flag-img {
+    .quiz__flag-img {
         width: 290px;
         height: 150px;
     }

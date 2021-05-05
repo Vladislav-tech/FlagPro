@@ -4,7 +4,7 @@ const info = document.querySelector('.info'),
       currentTab = document.querySelectorAll('.header-tab__current-element');
 if (info) {
   function hideTabContent(a) {
-    currentTab[0].animation = 'AddUnderlineTab 0.5s ease forwards';
+    currentTab[0].style.width = 100 + '%';
 
     for (let i = a; i < tabs.length; i++) {
       tabContent[i].classList.remove('show');
