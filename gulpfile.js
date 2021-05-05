@@ -11,6 +11,9 @@ const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const del = require('del');
 
+const sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
+
 function browsersync() {
   browserSync.init({
     server: { baseDir: 'app/'},
@@ -21,10 +24,12 @@ function browsersync() {
 
 function styles() {
   return src('app/scss/style.scss')
+  .pipe(sourcemaps.init())
   .pipe(concat('style.min.css'))
   .pipe(sass())
   .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-  .pipe(cleancss( { level: { 1: { specialComments: 0 } }, format: 'beautify'} ))
+  .pipe(cleancss( { level: { 1: { specialComments: 0 } }} ))
+  .pipe(sourcemaps.write())
   .pipe(dest('app/css/'))
   .pipe(browserSync.stream());
 }
@@ -41,8 +46,13 @@ function scripts() {
     'app/js/tabs.js',
     'app/js/quiz.js',
   ])
+  .pipe(sourcemaps.init())
+  .pipe(babel({
+    presets: ['@babel/env']
+  }))
   .pipe(concat('app.min.js'))
-  // .pipe(uglify())
+  .pipe(uglify())
+  .pipe(sourcemaps.write())
   .pipe(dest('app/js'))
   .pipe(browserSync.stream());
 }
