@@ -78,12 +78,12 @@ if (document.getElementById('quiz-page')) {
       this.counter = 0;
 
       console.log('level: ', this.difficultyLevel);
-      this.timer();
+      this._timer();
       shuffleArray(this.contries);
     }
     
     //Defines time for game
-    setTime() {
+    _setTime() {
       switch(this.difficultyLevel) {
         case 1:
           // this.gameTime uses ms
@@ -104,7 +104,7 @@ if (document.getElementById('quiz-page')) {
     }
 
     //Format time in ms and returns seconds and minutes as string
-    formatTime(ms) {
+    _formatTime(ms) {
       const total = {
         ms: 0,
         sec: 0,
@@ -139,8 +139,8 @@ if (document.getElementById('quiz-page')) {
       return total;
     }
 
-    timer() {
-      this.setTime();
+    _timer() {
+      this._setTime();
       
       let ms = 0;
       let seconds = 0;
@@ -162,9 +162,7 @@ if (document.getElementById('quiz-page')) {
           timeMinutes.textContent = `0${minutes}`;
         }
 
-        console.log(this.finishedGame);
         if (ms === this.gameTime) {
-          console.log('end');
           this.endGame();
           return;
         }
@@ -175,21 +173,20 @@ if (document.getElementById('quiz-page')) {
         }
 
         this.ms = ms;
-        console.log('this.ms: ', this.ms);
         timerId = setTimeout(time, 1000);
       };
       let timerId = setTimeout(time, 1000);
 
     }
 
-    generateFlag() {
+    _generateFlag() {
       console.log('class counter: ', this.counter);
       console.log(this.contries);
 
       flagPlace.style.backgroundImage = `url("${this.contries[this.counter].flag}")`;
     }
 
-    generateAnswers() {
+    _generateAnswers() {
       // Array of contry names
       const answersContries = [];
 
@@ -217,36 +214,22 @@ if (document.getElementById('quiz-page')) {
         rightAnswer = buttons[Math.round(Math.random() * 3)].textContent = this.contries[this.counter].name;
       }
       
-      
       console.log(rightAnswer);
       
-
       this.rightAnswer = rightAnswer;
       this.lifes = lifes.length;
     }
 
     // Uses when user chooses a tip
     showAnswer() {
-      // buttons.forEach(element => {
-      //   if (element.textContent === this.rightAnswer) {
-      //     element.style.backgroundColor = '#48E445';
-      //     if (this.counter == this.contries.length) {
-      //       console.log('you\'ve finished this game');
-      //     } else {
-      //       setTimeout(()=> {
-      //         this.nextQuestion();
-      //       }, 600);
-      //     }
-      //   }
-      // });
       if (this.counter === this.contries.length) {
-        console.log('A');
+        console.log('last question');
       } else {
         buttons.forEach(element => {
           if (element.textContent === this.rightAnswer) {
             element.style.backgroundColor = '#48E445';
             setTimeout(() => {
-              this.nextQuestion();
+              this._nextQuestion();
             }, 600);
           }
         });
@@ -263,7 +246,7 @@ if (document.getElementById('quiz-page')) {
 
           if (this.counter < this.contries.length - 1) {
             setTimeout(()=> {
-              this.nextQuestion();
+              this._nextQuestion();
             }, 600);
           } else {
             this.counter++;
@@ -291,14 +274,14 @@ if (document.getElementById('quiz-page')) {
     }
 
     startGame() {
-      this.generateFlag();
-      this.generateAnswers();
+      this._generateFlag();
+      this._generateAnswers();
     }
 
-    nextQuestion() {
+    _nextQuestion() {
       this.counter++;
-      this.generateFlag();
-      this.generateAnswers();
+      this._generateFlag();
+      this._generateAnswers();
       buttons.forEach(button => {
         button.style.backgroundColor = '#FFB800';
       });
@@ -310,14 +293,14 @@ if (document.getElementById('quiz-page')) {
       }
     }
 
-    showStats() {
+    _showStats() {
       totalQuestions.textContent = this.contries.length;
       finishedQuestions.textContent = this.counter;
       usedTime.textContent = timeMinutes.textContent + ': ' + timeSeconds.textContent;
-      totalTime.textContent = this.formatTime(this.gameTime).formatted;
+      totalTime.textContent = this._formatTime(this.gameTime).formatted;
 
       const midTimeMs = this.ms / this.counter;
-      midTime.textContent = this.formatTime(midTimeMs).formatted;
+      midTime.textContent = this._formatTime(midTimeMs).formatted;
 
       // leftLifes.textContent = this.lifes;
     }
@@ -326,7 +309,7 @@ if (document.getElementById('quiz-page')) {
       stats.style.display = 'flex';
       quizPage.style.display = 'none';
       
-      this.showStats();
+      this._showStats();
     }
   }
 
